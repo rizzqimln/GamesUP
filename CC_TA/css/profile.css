@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap');
+
+:root {
+  --primary-color: #02040f;
+  --primary-color-transparent: #02040f50;
+  --secondary-color: #5465FF;
+  --secondary-color-transparent: #5465FF50;
+  --tertiary-color: #002642;
+  --quad-color: #E5DADA;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: "DM Sans", sans-serif;
+  background: var(--primary-color);
+  color: var(--quad-color);
+  background-image: radial-gradient(#5465FF30 1px, #02040f30 1px);
+  background-size: 10px 10px;
+}
+
+a { text-decoration: none; color: var(--quad-color); cursor: pointer; }
+button { cursor: pointer; }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 16px;
+  border-bottom: 1px solid var(--secondary-color);
+  background: var(--primary-color);
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.nav-btn { display: flex; align-items: center; gap: 2rem; }
+
+.profile-nav {
+  padding: 0.5rem;
+  border-radius: 12px;
+  background-color: var(--secondary-color-transparent);
+}
+
+.profile-nav:hover { background-color: var(--secondary-color); }
+.logo { font-family: "Syne", sans-serif; font-weight: 800; }
+
+.menu-button {
+  display: none;
+  width: 2.625rem;
+  height: 2.625rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3125rem;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+}
+
+.menu-button span {
+  display: block;
+  width: 1.1875rem;
+  height: 0.125rem;
+  background-color: #20201e;
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: -15.625rem;
+  display: flex;
+  width: 15.625rem;
+  height: 100%;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 5.625rem 1.5625rem 1.5625rem;
+  background-color: var(--primary-color);
+  transition: right 0.3s ease-in-out;
+}
+
+.mobile-menu a { font-size: 1.125rem; font-weight: 700; }
+.mobile-menu a:hover { color: var(--secondary-color); }
+.mobile-menu.active { right: 0; }
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  border-right: 1px solid var(--secondary-color-transparent);
+  border-left: 1px solid var(--secondary-color-transparent);
+  background: var(--primary-color);
+}
+
+.profile-heading { margin: 12px 0 24px; }
+.profile-heading h1, .profile-info h2, .profile-games h2 { font-family: "Syne", sans-serif; }
+.profile-heading p { margin-top: 8px; }
+
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-img, .profile-info, .profile-games {
+  padding: 24px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 12px;
+  background: var(--secondary-color-transparent);
+}
+
+.profile-img {
+  width: 240px;
+  text-align: center;
+}
+
+.profile-img img {
+  width: 160px;
+  height: 160px;
+  border: 3px solid var(--secondary-color);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-img p { margin-top: 12px; }
+
+.profile-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.profile-info p { margin-top: 12px; }
+.profile-games { width: 100%; }
+.profile-games p { margin-top: 16px; }
+
+footer {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 16px;
+  border-top: 1px solid var(--secondary-color);
+  background: var(--primary-color);
+  text-align: center;
+  z-index: 1000;
+}
+
+footer p { color: var(--quad-color); }
+
+.foot-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer-logo { font-family: "Syne", sans-serif; font-weight: 800; }
+.footer-logo h2 { font-size: 2rem; }
+.contact { text-align: left; }
+
+.listContact {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+.listContact a { padding: 2px 0; }
+.listContact a:hover { color: var(--secondary-color); }
+
+.copyright {
+  margin-top: 24px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1120px) {
+  main { border: 0; }
+}
+
+@media screen and (max-width: 768px) {
+  .profile { flex-direction: column; }
+  .profile-img { width: 100%; }
+  .foot-container { gap: 24px; }
+  .footer-top { flex-direction: column; gap: 24px; }
+  .contact { order: 1; }
+  .footer-logo { order: 2; align-self: center; }
+  .copyright { margin-top: 0; }
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-menu, .profile-nav { display: none; }
+  .menu-button { display: flex; }
+}
